@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@font-face {
+    font-family: fontNya;
+    src: url(JawaPalsu-Normal.ttf);
+ }
+
+ html {
+    scroll-behavior: smooth;
+ }
+
+:root {
+    /*=============== Colors ==================*/
+    --body-color: #07213C;
+    --color-1: #5d5c5c;
+    --color-2: #766a64;
+    --color-2-transparent: rgba(178, 96, 24, 0.1);
+    --color-3: rgba(178, 97, 24, 0.15);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    --biggest-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight / Ketebalan ==========*/
+    --font-light: 300;
+    --font-reguler: 400;
+    --font-semi-bold: 600;
+
+    --z-tooltip: 10;
+}
+
+/* NOTE ============== Reset and Default ============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ====================================================== */
+
+#particles-js {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url(https://files.catbox.moe/y3aejg.jpg);
+    background-position: fill;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* untuk ubah warna particle -> app.js -> color -> value*/
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: var(--color-2-transparent);
+    color: var(--color-2-transparent);
+}
+
+audio::-webkit-media-controls-play-button {
+    color: transparent;
+}
+
+audio {
+    width: 280px;
+    /* display: none; */
+}
+
+.mempelay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.kedua__mempelay {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+.dewi,
+.dan,
+.sam {
+    font-family: fontNya;
+    color: var(--color-2);
+}
+
+.dewi,
+.sam {
+    text-align: center;
+    font-size: 70px;
+}
+
+.dan {
+    text-align: center;
+    font-size: 45px;
+    padding: 0;
+    margin: 0;
+}
+
+.quote {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tanggal {
+    font-weight: var(--font-semi-bold);
+    color: var(--color-1);
+    font-size: var(--h2-font-size);
+    font-family: 'Poppins', sans-serif;
+}
+
+.quote p i {
+    font-weight: var(--font-reguler);
+    font-size: var(--small-font-size);
+    color: var(--color-1);
+    margin-top: .5rem;
+}
+
+.mail {
+    display: flex;
+    background-color: var(--color-1);
+    padding: 1rem 1rem;
+    border-radius: 2rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    transition: .3s;
+}
+
+.mail a {
+    display: inline-flex;
+    align-items: center;
+    font-weight: var(--font-light);
+    font-size: var(--small-font-size);
+}
+
+.mail i {
+    padding-right: .5rem;
+    font-size: 1.5rem;
+    font-weight: var(--font-light);
+}
+
+.mail:hover {
+    background-color: var(--color-2);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.txt-amplop,
+i {
+    color: white;
+}
+
+.doa {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    transition: .3s;
+    text-align: center;
+    font-size: var(--h2-font-size);
+    color: var(--color-2);
+    margin-bottom: 1rem;
+    font-family: 'Noto Naskh Arabic';
+}
+
+
+
+/* NOTE Media Query */
+/* Smartphone */
+@media screen and (min-width: 360px) and (max-width: 767px) {
+    .dewi,
+    .sam{
+        font-size: 50px;
+    }
+
+    .dewi{
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .dan{
+        margin-top: -5px;
+        font-size: 40px;
+    }
+
+    .sam{
+        text-align: right;
+        margin-top: -5px;
+        padding-right: 10px;
+    }
+
+    .tanggal{
+        font-size: 18px;
+    }
+
+    .quote p i{
+        font-size: 14px;
+    }
+
+    .mail .txt-amplop p {
+        color: rgba(255, 255, 255, 0.747);
+    }
+
+    .mail a{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .mail i {
+        padding-right: 17px;
+        font-size: 27px;
+    }
+
+    .quote_mail{
+        font-size: 13px;
+        color: var(--color-1);
+        margin-bottom: .5rem;
+        text-align: center;
+    }
+
+    .doaa {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 819px) {
+    .dewi,
+    .sam{
+        font-size: 55px;
+    }
+
+    .dewi{
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .dan{
+        margin-top: -5px;
+    }
+
+    .sam{
+        text-align: right;
+        margin-top: -5px;
+        padding-right: 10px;
+    }
+
+    .tanggal{
+        font-size: 23px;
+    }
+
+    .quote p i{
+        font-size: 15px;
+    }
+
+    .mail .txt-amplop p {
+        color: rgba(255, 255, 255, 0.747);
+    }
+
+    .mail a{
+        font-size: 15px;
+    }
+
+    .quote_mail{
+        font-size: 15px;
+        color: var(--color-1);
+        margin-bottom: .5rem;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 820px) and (max-width: 833px) {
+    .dewi,
+    .sam{
+        font-size: 60px;
+    }
+
+    .dewi{
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .dan{
+        margin-top: -5px;
+    }
+
+    .sam{
+        text-align: right;
+        margin-top: -5px;
+        padding-right: 10px;
+    }
+
+    .tanggal{
+        font-size: 23px;
+    }
+
+    .quote p i{
+        font-size: 15px;
+    }
+
+    .mail .txt-amplop p {
+        color: rgba(255, 255, 255, 0.747);
+    }
+
+    .mail a{
+        font-size: 15px;
+    }
+
+    .quote_mail{
+        font-size: 15px;
+        color: var(--color-1);
+        margin-bottom: .5rem;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 834px) and (max-width: 1023px) {
+    .dewi,
+    .sam{
+        font-size: 55px;
+    }
+
+    .dewi{
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .dan{
+        margin-top: -5px;
+    }
+
+    .sam{
+        text-align: right;
+        margin-top: -5px;
+        padding-right: 10px;
+    }
+
+    .tanggal{
+        font-size: 20px;
+    }
+
+    .quote p i{
+        font-size: 15px;
+    }
+
+    .mail .txt-amplop p {
+        color: rgba(255, 255, 255, 0.747);
+    }
+
+    .mail a{
+        font-size: 15px;
+    }
+
+    .quote_mail{
+        font-size: 15px;
+        color: var(--color-1);
+        margin-bottom: .5rem;
+        text-align: center;
+    }
+}
+
+/* laptop */
+@media screen and (min-width: 1024px) and (max-width: 1299px){
+    .kedua__mempelay {
+        width: 30%;
+    }
+
+    .dewi,
+    .sam{
+        font-size: 47px;
+    }
+
+    .dewi{
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .dan{
+        margin-top: -5px;
+    }
+
+    .sam{
+        text-align: right;
+        margin-top: 5px;
+        padding-right: 10px;
+    }
+
+    .tanggal{
+        font-size: 18px;
+    }
+
+    .quote p i{
+        font-size: 15px;
+    }
+
+    .mail{
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-radius: 3rem;
+        margin-top: 10px;
+        margin-bottom: .5rem;
+    }
+
+    .mail, .txt-amplop p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.747);
+    }
+
+    .quote_mail{
+        font-size: 14px;
+        color: var(--color-1);
+        margin-bottom: .5rem;
+    }
+
+    .mail a{
+        font-size: 15px;
+    }
+
+    .mail .ic_mail{
+        font-size: 25px;
+        font-weight: var(--font-light);
+    }
+
+    .mempelay audio{
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 1300px){
+
+    .mempelay content{
+        height: 100vh;
+    }
+
+    .dewi,
+    .sam{
+        font-size: 70px;
+    }
+
+    .dewi{
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .dan{
+        font-size: 60px;
+        margin-top: -5px;
+    }
+
+    .sam{
+        text-align: right;
+        margin-top: -5px;
+        padding-right: 10px;
+    }
+
+    .tanggal{
+        font-size: 23px;
+    }
+
+    .quote p i{
+        font-size: 17px;
+    }
+
+    .mail .txt-amplop p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.747);
+        margin-bottom: 10px;
+    }
+
+    .mail a{
+        font-size: 15px;
+    }
+
+    .mempelay audio{
+        margin-top: 10px;
+    }
+}
